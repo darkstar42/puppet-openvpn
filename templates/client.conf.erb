@@ -18,7 +18,9 @@ user  <%= @openvpn_user %>
 <% if @openvpn_group -%>
 group <%= @openvpn_group %>
 <% end -%>
+<% if @ns_cert_type -%>
 ns-cert-type <%= @ns_cert_type %>
+<% end -%>
 cipher <%= @cipher %>
 comp-lzo
 verb <%= @verb %>
