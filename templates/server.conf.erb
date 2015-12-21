@@ -13,10 +13,20 @@ cert <%= @cert %>
 key <%= @key %>  # This file should be kept secret
 dh <%= @dh %>
 <% if @server != '' -%>
-server <%= @server %>
+mode server
+tls-server
+push "topology subnet"
+
+ifconfig <%= @server_net %> <%= @server_netmask %>
+ifconfig-pool <%= @pool %>
+push "route-gateway <%= @server_ip %>"
 ifconfig-pool-persist ipp.txt
 <% else -%>
 mode server
+<% end -%>
+
+<% if @client_to_client -%>
+client-to-client
 <% end -%>
 
 # IPv6 Server
