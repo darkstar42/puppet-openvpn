@@ -18,7 +18,6 @@ tls-server
 push "topology subnet"
 
 server <%= @server_net %> <%= @server_netmask %>
-ifconfig-pool <%= @pool %>
 push "route-gateway <%= @server_ip %>"
 ifconfig-pool-persist ipp.txt
 <% else -%>

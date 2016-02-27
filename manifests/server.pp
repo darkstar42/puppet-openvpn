@@ -22,7 +22,6 @@ class openvpn::server (
   $status_log               = 'openvpn-status.log',
   $plugins                  = '',
   $verb                     = '3',
-  $pool                     = '10.8.0.1 10.8.0.254 255.255.255.0',
   $port                     = '1194',
   $proto                    = 'udp',
   $redirect_gateway         = '',
